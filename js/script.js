@@ -1,7 +1,7 @@
 let ships = [
     [ // Ракетні крейсери
         {
-            "name": "Москва",
+            "name": "Гвардейський ракетний крейсер проекту 1164 \"Москва\"",
             "image": "assets/ship_test.jpg",
             "status": "down",
             "media": [
@@ -12,14 +12,101 @@ let ships = [
     ],
     [ // Фрегати
         {
-            "name": "Григорович",
+            "name": "Фрегат проекту 11356 \"Адмірал Грігоровіч\"",
             "image": "assets/ship_test.jpg",
             "status": "pending"
         },
         {
-            "name": "Адмірал Ессен",
+            "name": "Фрегат проекту 11356 \"Адмірал Ессен\"",
             "image": "assets/ship_test.jpg",
             "status": "pending"
+        },
+        {
+            "name": "Фрегат проекту 11356 \"Адмірал Макаров\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+
+            ]
+        }
+    ],
+    [ // Сторжеві
+        {
+            "name": "Сторжевий корабель проекту 1135 \"Ладний\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Сторжевий корабель проекту 1135-М \"Питлівий\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Корвет проекту 20380 \"Меркурій\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        }
+    ],
+    [ // Великі десантни
+        {
+            "name": "Великий десантний корабель проекту 1171 \"Саратов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+                
+            ]
+        },
+        {
+            "name": "Великий десантний корабель проекту 1171 \"Ніколай Фільчєнков\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Великий десантний корабель проекту 1171 \"Орєх\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Великий десантний корабель проекту 775 \"Азов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Великий десантний корабель проекту 775 \"Олєнєгорскій горняк\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+
+            ]
+        },
+        {
+            "name": "Великий десантний корабель проекту 775 \"Цезарь Куніков\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+                
+            ]
+        },
+        {
+            "name": "Великий десантний корабель проекту 775 \"Новочєркасск\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+                
+            ]
+        },
+        {
+            "name": "Великий десантний корабель проекту 775 \"Мінск\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+                
+            ]
+        },
+        {
+            "name": "Великий десантний корабель проекту 775 \"Ямал\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
         }
     ]
 ]
