@@ -1,0 +1,15 @@
+.image-container[data-state="Destroyed"]::after {
+    content: "";
+    position: absolute;
+    top: 50%; /* Adjust to align the line in the middle */
+    left: 0;
+    right: 0;
+    height: 2px; /* Line thickness */
+    background-color: red; /* Line color */
+    transform: rotate(-45deg); /* Adjust the angle as needed */
+    z-index: 1;
+}
+.image-container[data-state="Destroyed"] img {
+    position: relative;
+    z-index: 0;
+}
