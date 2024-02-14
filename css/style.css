@@ -1,4 +1,4 @@
-.image-container[data-state="Destroyed"]::after {
+.image-container[data-state="down"]::after {
     content: "";
     position: absolute;
     top: 50%; /* Adjust to align the line in the middle */
@@ -9,7 +9,7 @@
     transform: rotate(-45deg); /* Adjust the angle as needed */
     z-index: 1;
 }
-.image-container[data-state="Destroyed"] img {
+.image-container[data-state="down"] img {
     position: relative;
     z-index: 0;
 }

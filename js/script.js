@@ -1,36 +1,60 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const images = document.querySelectorAll('.image-container');
-    const galleryModal = $('#galleryModal');
-    const galleryModalBody = galleryModal.find('.modal-body');
-
-    // Function to apply state to an image container
-    function applyState(image) {
-        const currentState = image.getAttribute('data-state');
-        const galleryButton = image.querySelector('.view-gallery');
-        if (currentState === "Destroyed") {
-            galleryButton.style.display = 'block';
-            // Apply any visual indication for "Destroyed" state here, if needed
-        } else {
-            galleryButton.style.display = 'none';
-            // Revert any visual changes for "Normal" state here, if needed
+let ships = [
+    [ // Ракетні крейсери
+        {
+            "name": "Москва",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+                "assets/destroyed_proof/moskva.png",
+                "assets/destroyed_proof/moskva.mp4"
+            ]
         }
-    }
+    ],
+    [ // Фрегати
+        {
+            "name": "Григорович",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Адмірал Ессен",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        }
+    ]
+]
 
+document.addEventListener('DOMContentLoaded', function () {
     // Function to open gallery modal
-    function openGallery(image) {
-        const galleryContent = `
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <img src="assets/destroyed_proof/moskva.png" class="img-fluid" alt="Gallery Image 1">
-                    <video controls id="galleryVideo" class="video-responsive">
-                        <source src="assets/destroyed_proof/moskva.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                      </video>
-                </div>
-                <!-- Add more images/videos as needed -->
-            </div>
-        `;
-        galleryModalBody.html(galleryContent);
+    function openGallery(ship) {
+        const galleryModal = $('#galleryModal');
+        const galleryModalBody = galleryModal.find('.modal-body');
+
+        var galleryRow = document.createElement("div")
+        galleryRow.className="row"
+
+        var galleryCollumn = document.createElement("div")
+        galleryCollumn.className = "col-lg-4 col-md-6 mb-4"
+        galleryRow.appendChild(galleryCollumn)
+
+        ship.media.forEach(item => {
+            if (item.endsWith("mp4")) {
+                var video = document.createElement("video")
+                video.controls = true
+                video.id = "galleryVideo"
+                video.className = "video-responsive"
+                video.src = item
+                video.type = "video/mp4"
+                galleryCollumn.appendChild(video)
+            } else if (item.endsWith("jpg") || (item.endsWith("png"))) {
+                var image = document.createElement("img")
+                image.src = item
+                image.className = "img-fluid"
+                galleryCollumn.appendChild(image)
+            }
+        })
+        
+        galleryModalBody.html(galleryRow.innerHTML);
         galleryModal.modal('show'); // This line should show the modal
 
         galleryModal.on('hide.bs.modal', function () {
@@ -41,27 +65,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+    // Builds HTML grid of ships
+    function buildShipsGrid(ships) {
+        var grid = document.getElementById('container')
+        ships.forEach(row => {
+            var rowElement = document.createElement("div")
+            rowElement.className = "row"
+            row.forEach(ship => { 
+                var shipElement = document.createElement("div")
+                shipElement.className = "col-md-4 mb-4"
 
-    // Apply initial states
-    images.forEach(image => {
-        applyState(image); // Apply state on page load
-        
-        // Handle "View Gallery" button click
-        image.querySelector('.view-gallery').addEventListener('click', function(event) {
-            event.stopPropagation(); // Prevent the image state toggling
-            openGallery(image);
-        });
+                var shipContainer = document.createElement("div")
+                shipContainer.className = "image-container"
+                shipContainer.setAttribute("data-state", ship.status)
+                shipElement.appendChild(shipContainer)
 
-        // Toggle state on click
-        // Debug feature...
-        // image.addEventListener('click', function() {
-        //     const currentState = this.getAttribute('data-state');
-        //     if (currentState === "Normal") {
-        //         this.setAttribute('data-state', 'Destroyed');
-        //     } else {
-        //         this.setAttribute('data-state', 'Normal');
-        //     }
-        //     applyState(this); // Re-apply state after toggle
-        // });
-    });
+                var image = document.createElement("img")
+                image.className = "img-fluid"
+                image.src = ship.image
+                shipContainer.appendChild(image)
+
+                var caption = document.createElement("p")
+                caption.className="image-caption"
+                caption.innerText=ship.name
+                shipContainer.appendChild(caption)
+
+                var button = document.createElement("button")
+                button.className="btn btn-primary view-gallery"
+                button.style.display = ship.status === "down" ? 'block' : 'none'
+                button.innerText = "View Gallery"
+                button.addEventListener('click', function (event) {
+                    event.stopPropagation(); // Prevent the image state toggling
+                    openGallery(ship);
+                });
+                shipContainer.appendChild(button)
+
+                rowElement.appendChild(shipElement)
+            })
+            grid.appendChild(rowElement)
+        })
+    }
+
+    // Execution starts here
+    buildShipsGrid(ships)
 });
