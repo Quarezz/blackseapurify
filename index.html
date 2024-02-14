@@ -17,7 +17,8 @@
                     <img src="assets/ship_test.jpg" class="img-fluid" alt="Image description">
                     <p class="image-caption">Ракетний крейсер "Москва"</p>
                     <!-- Button hidden by default, shown for "Destroyed" images -->
-                    <button class="btn btn-primary view-gallery" style="display: none;">View Gallery</button>
+                    <button class="btn btn-primary view-gallery" data-toggle="tooltip" data-placement="top" title="View Gallery">View Gallery</button>
+
                 </div>
             </div>
             <!-- Repeat the above block for each image you want to include -->
@@ -44,9 +45,29 @@
         </div>
         
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <!-- Gallery Modal -->
+    <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="galleryModalLabel">Image Gallery</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <!-- Gallery images/videos will be injected here -->
+            </div>
+        </div>
+        </div>
+    </div>
+     <!-- Full jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Popper.js for Bootstrap -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Custom Script -->
     <script src="js/script.js"></script>
 </body>
 </html>
