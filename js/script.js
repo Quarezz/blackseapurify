@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <img src="assets/destroyed_proof/moskva.png" class="img-fluid" alt="Gallery Image 1">
-                    <video controls class="video-responsive">
+                    <video controls id="galleryVideo" class="video-responsive">
                         <source src="assets/destroyed_proof/moskva.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                       </video>
@@ -32,6 +32,14 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
         galleryModalBody.html(galleryContent);
         galleryModal.modal('show'); // This line should show the modal
+
+        galleryModal.on('hide.bs.modal', function () {
+            // Pause the video
+            var video = document.getElementById('galleryVideo');
+            if (video) {
+                video.pause();
+            }
+        });
     }
 
     // Apply initial states
