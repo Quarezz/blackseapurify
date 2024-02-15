@@ -108,6 +108,225 @@ let ships = [
             "image": "assets/ship_test.jpg",
             "status": "pendind"
         }
+    ],
+    [ // Малі протичовнові
+        {
+            "name": "Малий протичовновий корабель проекту 1124М \"Муромєц\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий протичовновий корабель проекту 1124М \"Суздалєц\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий протичовновий корабель проекту 1124М \"Касімов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий протичовновий корабель проекту 1124М \"Єйск\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий протичовновий корабель проекту 1124М \"Поворіно\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий протичовновий корабель проекту 1124М \"Алєксандровєц\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        }
+    ],
+    [ // Малий ракетний
+        {
+            "name": "Малий ракетний корабель проекту 21631 \"Вишній Волчьок\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий ракетний корабель проекту 21631 \"Орєхово-Зуєво\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий ракетний корабель проекту 1239 \"Бора\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий ракетний корабель проекту 1239 \"Самум\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий ракетний корабель проекту 22800 \"Циклон\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий ракетний корабель проекту 21631 \"Грайворон\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий ракетний корабель проекту 21631 \"Інгушетік\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Малий ракетний корабель проекту 22800 \"Аскольд\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+
+            ]
+        }
+    ],
+    [ // Патрульні
+        {
+            "name": "Патрульниий корабель проекту 22160 \"Васілій Биков\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Патрульниий корабель проекту 22160 \"Дмітрій Рогачьов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Патрульниий корабель проекту 22160 \"Павєл Дєржавін\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Патрульниий корабель проекту 22160 \"Сєргєй Котов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        }
+    ],
+    [ // Тральщики
+        {
+            "name": "Тральщик проекту 266-М \"Іван Голубєц\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Тральщик проекту 266-М \"Ковровєц\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Базовий тральщик проекту 12700 \"Іван Антонов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Базовий тральщик проекту 12700 \"Владімір Ємєльянов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Базовий тральщик проекту 12700 \"Гєоргій Курбатов\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Морський тральщик проекту 266-М \"Турбініст\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Базовий тральщик проекту 1265 \"Мінєральниє води\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Морський тральщик проекту 12660 \"Желєзняков\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Морський тральщик проекту 266МЕ \"Валєнтін Пікуль\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        },
+        {
+            "name": "Морський тральщик проекту 266МЕ \"Віце-адмірал Захарин\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pendind"
+        }
+    ],
+    [ // Ракетні катери
+        {
+            "name": "Ракетний катер проекту 1241 \"Івановєц\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+
+            ]
+        },
+        {
+            "name": "Ракетний катер проекту 1241 \"Набєрєжниє Чєлни\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Ракетний катер проекту 1241 \"Р-60\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        }
+    ],
+    [ // Буксири
+        {
+            "name": "Рятівне буксирне судно проекту 22870 \"Васілій Бек\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+
+            ]
+        }
+    ],
+    [ // Десантні катери
+        {
+            "name": "Десантний катер проекту 11770 \"Д-144\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+
+            ]
+        },
+        {
+            "name": "Десантний катер проекту 11770 \"Д-199\"",
+            "image": "assets/ship_test.jpg",
+            "status": "down",
+            "media": [
+
+            ]
+        },
+        {
+            "name": "Десантний катер проекту 1176 \"Д-295\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Десантний катер проекту 1176 \"Д-106\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Десантний катер проекту 02510 \"Д-295\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        },
+        {
+            "name": "Десантний катер проекту 02510 \"Д-309\"",
+            "image": "assets/ship_test.jpg",
+            "status": "pending"
+        }
     ]
 ]
 
