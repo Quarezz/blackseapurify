@@ -50,7 +50,7 @@ let ships = [
             "name": "Сторжевий корабель проекту 1135-М \"Питлівий\"",
             "image": "assets/ships/fregate.png",
             "status": "pending",
-            "type_name": "Корвет",
+            "type_name": "Фрегат",
             "type": "frigate"
         },
         {
