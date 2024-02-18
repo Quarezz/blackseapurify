@@ -1,7 +1,7 @@
 let ships = [
     {
             "name": "Гвардейський ракетний крейсер проекту 1164 \"Москва\"",
-            "image": "assets/ships/rocket_cruiser.png",
+            "image": "assets/ships/moscow.png",
             "date": "2022.04.14",
             "status": "down",
             "media": [
@@ -13,21 +13,21 @@ let ships = [
         },
         {
             "name": "Фрегат проекту 11356 \"Адмірал Грігоровіч\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/fregate.png",
             "status": "pending",
             "type_name": "Фрегат",
             "type": "frigate"
         },
         {
             "name": "Фрегат проекту 11356 \"Адмірал Ессен\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/fregate.png",
             "status": "pending",
             "type_name": "Фрегат",
             "type": "frigate"
         },
         {
             "name": "Фрегат проекту 11356 \"Адмірал Макаров\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/fregate.png",
             "status": "down",
             "date": "2022.10.29",
             "media": [
@@ -41,23 +41,23 @@ let ships = [
         },
         {
             "name": "Сторжевий корабель проекту 1135 \"Ладний\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/fregate.png",
             "status": "pending",
-            "type_name": "Сторжевий корабель",
-            "type": "corvete"
+            "type_name": "Фрегат",
+            "type": "frigate"
         },
         {
             "name": "Сторжевий корабель проекту 1135-М \"Питлівий\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/fregate.png",
             "status": "pending",
-            "type_name": "Сторжевий корабель",
-            "type": "corvete"
+            "type_name": "Корвет",
+            "type": "frigate"
         },
         {
             "name": "Корвет проекту 20380 \"Меркурій\"",
             "image": "assets/ship_test.png",
             "status": "pending",
-            "type_name": "Сторжевий корабель",
+            "type_name": "Корвет",
             "type": "corvete"
         },
         {
@@ -396,7 +396,7 @@ let ships = [
             "image": "assets/ship_test.png",
             "status": "down",
             "media": [
-                "assets/destroyed_proof/vasily_1.mp4",
+                "assets/destroyed_proof/vasiliy_1.mp4",
             ],
             "date": "2022.06.17",
             "type_name": "Буксири",
@@ -406,8 +406,9 @@ let ships = [
             "name": "Десантний катер проекту 11770 \"Д-144\"",
             "image": "assets/ship_test.png",
             "status": "down",
+            "date": "2023-11-10",
             "media": [
-
+                "assets/destroyed_proof/d_144.mp4"
             ],
             "type_name": "Десантні катери",
             "type": "landing_boat"
@@ -416,8 +417,9 @@ let ships = [
             "name": "Десантний катер проекту 11770 \"Д-199\"",
             "image": "assets/ship_test.png",
             "status": "down",
+            "date": "2022-05-07",   
             "media": [
-
+                "assets/destroyed_proof/d_199.mp4"
             ],
             "type_name": "Десантні катери",
             "type": "landing_boat"
@@ -503,8 +505,10 @@ let ships = [
             "name": "Підводний човен проекту 646.3 \"Ростов-на-Дону\"",
             "image": "assets/ship_test.png",
             "status": "down",
+            "date": "2023.09.12",
             "media": [
-
+                "assets/destroyed_proof/rostov_1.jpeg",
+                "assets/destroyed_proof/rostov_2.jpeg"
             ],
             "type_name": "Підводні човни",
             "type": "submarine"

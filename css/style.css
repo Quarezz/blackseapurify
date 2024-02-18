@@ -64,7 +64,7 @@
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    background-color: #f8f9fa; /* Light grey background, change as needed */
+    background-color: #ffffff; /* Light grey background, change as needed */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
