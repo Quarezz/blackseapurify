@@ -496,14 +496,14 @@ let ships = [
         },
         {
             "name": "Підводний човен проекту 877В \"Апроса\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/submarine.png",
             "status": "pending",
             "type_name": "Підводні човни",
             "type": "submarine"
         },
         {
             "name": "Підводний човен проекту 646.3 \"Ростов-на-Дону\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/submarine.png",
             "status": "down",
             "date": "2023.09.12",
             "media": [
@@ -515,35 +515,35 @@ let ships = [
         },
         {
             "name": "Підводний човен проекту 646.3 \"Новороссійск\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/submarine.png",
             "status": "pending",
             "type_name": "Підводні човни",
             "type": "submarine"
         },
         {
             "name": "Підводний човен проекту 646.3 \"Старий Оскол\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/submarine.png",
             "status": "pending",
             "type_name": "Підводні човни",
             "type": "submarine"
         },
         {
             "name": "Підводний човен проекту 646.3 \"Краснодар\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/submarine.png",
             "status": "pending",
             "type_name": "Підводні човни",
             "type": "submarine"
         },
         {
             "name": "Підводний човен проекту 646.3 \"Вєлікій Новгород\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/submarine.png",
             "status": "pending",
             "type_name": "Підводні човни",
             "type": "submarine"
         },
         {
             "name": "Підводний човен проекту 646.3 \"Колпіно\"",
-            "image": "assets/ship_test.png",
+            "image": "assets/ships/submarine.png",
             "status": "pending",
             "type_name": "Підводні човни",
             "type": "submarine"
@@ -607,7 +607,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const tabContent = document.getElementById(`container-${type}`);
         tabContent.innerHTML = ''; // Clear existing content
     
-        ships.forEach((ship, index) => {
+        ships.forEach(ship => {
             var card = document.createElement("div");
             card.className = "card";
             card.setAttribute("data-status", ship.status);
@@ -645,7 +645,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 var button = document.createElement("button");
                 button.className = "btn btn-link p-0 view-gallery-btn";
                 button.innerText = "View Gallery";
-                button.setAttribute("data-ship-index", index);
+                button.setAttribute("data-ship-index", ship.identifier);
                 // onClick is set after tabs are appended x_x
                 cardBody.appendChild(button);
             }
@@ -719,7 +719,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     function addGalleryClickListener() {
-        document.body.addEventListener('click', function (event) {
+        // Event listener for the 'View Gallery' buttons using event delegation
+        document.getElementById('shipTabsContent').addEventListener('click', function(event) {
             if (event.target.classList.contains('view-gallery-btn')) {
                 var shipIndex = event.target.getAttribute('data-ship-index');
                 openGallery(ships[shipIndex]);
@@ -727,6 +728,10 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Assign index-based identifiers to every ship for later
+    ships.forEach((ship, index) => {
+        ship.identifier = index
+    });
     setupSlider()
     setupTabBar()
     populateAllTab()
