@@ -1,34 +1,8 @@
-.image-container[data-state="down"] .image-caption,
-.image-container[data-state="down"] .view-gallery {
-    position: relative;
-    z-index: 3; /* This ensures the text and button are above the fire */
-}
-
-/* Make video responsive */
-.video-responsive {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-}
-
-.modal-dialog {
-    max-width: 90%; /* Modal width should not exceed 90% of the screen width */
-    margin: 30px auto; /* This will center the modal horizontally */
-}
-
-.modal-content {
-    overflow: hidden; /* In case the content is bigger than the modal */
-}
-
-.modal-body {
-    max-height: calc(100vh - 60px); /* Adjust the '60px' value based on your modal header/footer */
-    overflow-y: auto; /* Makes the modal body scrollable */
-}
-
-.image-caption {
-    margin-bottom: 0px;
-}
-
+/*
+    -------------------------
+    Modal gallery
+    -------------------------
+*/
 .view-gallery-text {
     color: #007bff; /* Bootstrap default link color */
     text-decoration: underline; /* Underline to indicate it's clickable */
@@ -37,10 +11,109 @@
     padding: 2px; /* Optional: Adjust padding to your preference */
     /* Optional: Add hover effect to mimic a real link */
 }
-
 .view-gallery-text:hover {
     color: #0056b3; /* Darker shade on hover to give feedback */
     text-decoration: none; /* Removing the underline on hover can be a nice effect */
     /* Optional: you could also change the background color slightly on hover for more feedback */
     background-color: rgba(0, 0, 0, 0.05); /* Very light background color on hover */
 }
+/* Make video responsive */
+.video-responsive {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+.modal-dialog {
+    max-width: 90%; /* Modal width should not exceed 90% of the screen width */
+    margin: 30px auto; /* This will center the modal horizontally */
+}
+.modal-content {
+    overflow: hidden; /* In case the content is bigger than the modal */
+}
+.modal-body {
+    max-height: calc(100vh - 60px); /* Adjust the '60px' value based on your modal header/footer */
+    overflow-y: auto; /* Makes the modal body scrollable */
+}
+/*
+    --------------------
+    Cards
+    --------------------
+*/
+
+/* Card Styles */
+.card {
+    border: none;
+    border-radius: 0.25rem;
+    overflow: hidden; /* Ensures the overlay fits within the card */
+    background-color: #f8f9fa; /* Light grey background */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+/* Image Wrapper Styles */
+.image-wrapper {
+    position: relative;
+}
+/* Ship Image Styles */
+.card-img-top {
+    width: 100%;
+    height: auto; /* Adjust height to maintain the aspect ratio */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+/* Overlay for Destroyed Ships */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.5)); /* Fire-like gradient */
+    opacity: 0; /* Hide initially; shown on 'down' status */
+    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+}
+/* Card Body Styles */
+.card-body {
+    padding: 0.5rem;
+    text-align: center;
+}
+/* Ship Name Styles */
+.card-title {
+    font-size: 1rem; /* Adjust font size as needed */
+    color: #333; /* Dark text for readability */
+    margin-bottom: 0.25rem; /* Spacing between title and date */
+}
+/* Date Text Styles */
+.card-text {
+    font-size: 0.9rem; /* Adjust font size as needed */
+    color: #dc3545; /* Bootstrap's danger color for the date */
+    margin-bottom: 0.5rem; /* Spacing between date and button */
+}
+/* Button Styles to Look Like Text */
+.btn-link {
+    font-size: 0.9rem; /* Adjust font size as needed */
+    color: #007bff; /* Bootstrap's link color */
+    padding: 0; /* Remove padding */
+    border: none; /* Remove border */
+    background: none; /* Remove background */
+}
+.btn-link:hover,
+.btn-link:focus {
+    text-decoration: underline; /* Underline to indicate it's clickable */
+    color: #0056b3; /* Darker shade on hover */
+    background: none; /* Ensure no background on hover/focus */
+    outline: none; /* Remove focus outline */
+}
+
+/* Hover Effects for Card */
+.card:hover {
+    transform: scale(1.03); /* Slightly scale up cards on hover */
+}
+
+.card:hover .card-img-top {
+    opacity: 0.9; /* Slightly fade image on hover */
+}
+
+.card:hover .overlay {
+    opacity: 1; /* Show the overlay on hover if status is 'down' */
+}
+
+
+

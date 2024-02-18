@@ -481,47 +481,65 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     // Builds HTML grid of ships
     function buildShipsGrid(ships) {
-        var grid = document.getElementById('container')
-        ships.forEach(row => {
-            var rowElement = document.createElement("div")
-            rowElement.className = "row"
-            row.forEach(ship => { 
-                var shipElement = document.createElement("div")
-                shipElement.className = "col-md-4 mb-4"
-
-                var shipContainer = document.createElement("div")
-                shipContainer.className = "image-container"
-                shipContainer.setAttribute("data-state", ship.status)
-                shipElement.appendChild(shipContainer)
-
-                var image = document.createElement("img")
-                image.className = "img-fluid"
-                image.src = ship.image
-                shipContainer.appendChild(image)
-
-                var caption = document.createElement("p")
-                caption.className="image-caption"
-                caption.innerText=ship.name
-                shipContainer.appendChild(caption)
-
-                if (ship.status === "down") {
-                    var buttonAsText = document.createElement("span"); // changed from 'button' to 'span'
-                    buttonAsText.className = "view-gallery-text";
-                    buttonAsText.style.cursor = "pointer";
-                    buttonAsText.innerText = ship.date;
-                    buttonAsText.addEventListener('click', function (event) {
-                        event.stopPropagation(); // Prevent the image state toggling
-                        openGallery(ship);
-                    });
-                    shipContainer.appendChild(buttonAsText);
-                }
-
-                rowElement.appendChild(shipElement)
-            })
-            grid.appendChild(rowElement)
-        })
+        var tabContent = document.getElementById('all'); // Get the 'All' tab content container
+        tabContent.innerHTML = ''; // Clear existing content
+    
+        var row = document.createElement("div");
+        row.className = "row";
+    
+        ships.forEach(ship => {
+            var col = document.createElement("div");
+            col.className = "col-md-4 mb-4";
+    
+            var card = document.createElement("div");
+            card.className = "card";
+    
+            var imageWrapper = document.createElement("div");
+            imageWrapper.className = "image-wrapper position-relative";
+            
+            var image = document.createElement("img");
+            image.className = "card-img-top";
+            image.src = ship.image;
+            image.alt = ship.name;
+            imageWrapper.appendChild(image);
+    
+            if (ship.status === "down") {
+                var overlay = document.createElement("div");
+                overlay.className = "overlay";
+                overlay.classList.add('show-overlay'); // This class will be toggled based on the ship's status
+                imageWrapper.appendChild(overlay);
+            }
+    
+            var cardBody = document.createElement("div");
+            cardBody.className = "card-body";
+    
+            var title = document.createElement("h5");
+            title.className = "card-title";
+            title.innerText = ship.name;
+            cardBody.appendChild(title);
+    
+            if (ship.status === "down") {
+                var dateText = document.createElement("p");
+                dateText.className = "card-text";
+                dateText.innerText = ship.date;
+                cardBody.appendChild(dateText);
+    
+                var button = document.createElement("button");
+                button.className = "btn btn-link p-0";
+                button.innerText = "View Gallery";
+                button.onclick = function () {
+                    openGallery(ship);
+                };
+                cardBody.appendChild(button);
+            }
+    
+            card.appendChild(imageWrapper);
+            card.appendChild(cardBody);
+            col.appendChild(card);
+            row.appendChild(col);
+        });
+        tabContent.appendChild(row);
     }
-
     // Execution starts here
-    buildShipsGrid(ships)
+    buildShipsGrid(ships.flat(Infinity))
 });
