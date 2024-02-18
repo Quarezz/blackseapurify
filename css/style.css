@@ -1,18 +1,9 @@
-.image-container[data-state="down"]::after {
-    content: "";
-    position: absolute;
-    top: 50%; /* Adjust to align the line in the middle */
-    left: 0;
-    right: 0;
-    height: 2px; /* Line thickness */
-    background-color: red; /* Line color */
-    transform: rotate(-45deg); /* Adjust the angle as needed */
-    z-index: 1;
-}
-.image-container[data-state="down"] img {
+.image-container[data-state="down"] .image-caption,
+.image-container[data-state="down"] .view-gallery {
     position: relative;
-    z-index: 0;
+    z-index: 3; /* This ensures the text and button are above the fire */
 }
+
 /* Make video responsive */
 .video-responsive {
     width: 100%;
@@ -20,7 +11,36 @@
     max-width: 100%;
 }
 
-/* Optional: Ensure the modal body has no padding if needed */
+.modal-dialog {
+    max-width: 90%; /* Modal width should not exceed 90% of the screen width */
+    margin: 30px auto; /* This will center the modal horizontally */
+}
+
+.modal-content {
+    overflow: hidden; /* In case the content is bigger than the modal */
+}
+
 .modal-body {
-    padding: 0;
+    max-height: calc(100vh - 60px); /* Adjust the '60px' value based on your modal header/footer */
+    overflow-y: auto; /* Makes the modal body scrollable */
+}
+
+.image-caption {
+    margin-bottom: 0px;
+}
+
+.view-gallery-text {
+    color: #007bff; /* Bootstrap default link color */
+    text-decoration: underline; /* Underline to indicate it's clickable */
+    cursor: pointer; /* Changes the cursor to the 'hand' icon when hovering over the text */
+    /* Add padding for a larger clickable area if necessary */
+    padding: 2px; /* Optional: Adjust padding to your preference */
+    /* Optional: Add hover effect to mimic a real link */
+}
+
+.view-gallery-text:hover {
+    color: #0056b3; /* Darker shade on hover to give feedback */
+    text-decoration: none; /* Removing the underline on hover can be a nice effect */
+    /* Optional: you could also change the background color slightly on hover for more feedback */
+    background-color: rgba(0, 0, 0, 0.05); /* Very light background color on hover */
 }

@@ -8,9 +8,31 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container" id="container">
-        <!-- Grid will go here -->
+    <ul class="nav nav-tabs" id="shipTabs" role="tablist">
+        <li class="nav-item">
+          <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
+        </li>
+        <!-- Repeat for other categories -->
+        <li class="nav-item">
+          <a class="nav-link" id="category1-tab" data-toggle="tab" href="#category1" role="tab" aria-controls="category1" aria-selected="false">Category 1</a>
+        </li>
+        <!-- ... -->
+      </ul>
+      
+    <div class="tab-content" id="shipTabsContent">
+    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+        <!-- All ships will be displayed here -->
+        <div class="container" id="container">
+            <!-- Grid will go here -->
+        </div>
     </div>
+    <!-- Repeat for other categories -->
+    <div class="tab-pane fade" id="category1" role="tabpanel" aria-labelledby="category1-tab">
+        <!-- Category 1 ships will be displayed here -->
+    </div>
+    <!-- ... -->
+    </div>
+
     <!-- Gallery Modal -->
     <div class="modal fade" id="galleryModal" tabindex="-1" aria-labelledby="galleryModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
