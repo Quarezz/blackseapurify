@@ -64,8 +64,10 @@ let ships = [
             "name": "Великий десантний корабель проекту 1171 \"Саратов\"",
             "image": "assets/ship_test.png",
             "status": "down",
+            "date": "2022.03.24",
             "media": [
-                
+                "assets/destroyed_proof/saratov_1.mp4",
+                "assets/destroyed_proof/saratov_2.jpg"
             ],
             "type_name": "Великий Десантний",
             "type": "landing"
@@ -95,8 +97,13 @@ let ships = [
             "name": "Великий десантний корабель проекту 775 \"Олєнєгорскій горняк\"",
             "image": "assets/ship_test.png",
             "status": "down",
+            "date": "2023.08.04",
             "media": [
-
+                "assets/destroyed_proof/olen_1.mp4",
+                "assets/destroyed_proof/olen_2.mp4",
+                "assets/destroyed_proof/olen_3.jpg",
+                "assets/destroyed_proof/olen_4.png",
+                "assets/destroyed_proof/olen_5.mp4",
             ],
             "type_name": "Великий Десантний",
             "type": "landing"
@@ -105,8 +112,10 @@ let ships = [
             "name": "Великий десантний корабель проекту 775 \"Цезарь Куніков\"",
             "image": "assets/ship_test.png",
             "status": "down",
+            "date": "2024.02.14",
             "media": [
-                
+                "assets/destroyed_proof/cesar_1.mp4",
+                "assets/destroyed_proof/cesar_2.jpeg"
             ],
             "type_name": "Великий Десантний",
             "type": "landing"
@@ -139,9 +148,12 @@ let ships = [
             "image": "assets/ship_test.png",
             "status": "down",
             "media": [
-                
+                "assets/destroyed_proof/minsk.jpeg",
+                "assets/destroyed_proof/minsk_1.jpeg",
+                "assets/destroyed_proof/minsk_2.mp4"
             ],
             "type_name": "Великий Десантний",
+            "date": "2023.09.13",
             "type": "landing"
         },
         {
@@ -247,8 +259,11 @@ let ships = [
             "image": "assets/ship_test.png",
             "status": "down",
             "media": [
-
+                "assets/destroyed_proof/askold_1.jpg",
+                "assets/destroyed_proof/askold_1.mp4",
+                "assets/destroyed_proof/askold_2.jpg"
             ],
+            "date": "2023.11.04",
             "type_name": "Малі ракетні",
             "type": "small_rocket"
         },
@@ -355,8 +370,10 @@ let ships = [
             "image": "assets/ship_test.png",
             "status": "down",
             "media": [
-
+                "assets/destroyed_proof/ivan_1.jpg",
+                "assets/destroyed_proof/ivan_2.mp4"
             ],
+            "date": "2024.02.01",
             "type_name": "Ракетні катери",
             "type": "rocket_boat"
         },
@@ -375,12 +392,13 @@ let ships = [
             "type": "rocket_boat"
         },
         {
-            "name": "Рятівне буксирне судно проекту 22870 \"Васілій Бек\"",
+            "name": "Рятівне буксирне судно проекту 22870 \"Васілій Бех\"",
             "image": "assets/ship_test.png",
             "status": "down",
             "media": [
-
+                "assets/destroyed_proof/vasily_1.mp4",
             ],
+            "date": "2022.06.17",
             "type_name": "Буксири",
             "type": "puller"
         },
@@ -585,7 +603,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const tabContent = document.getElementById(`container-${type}`);
         tabContent.innerHTML = ''; // Clear existing content
     
-        ships.forEach(ship => {
+        ships.forEach((ship, index) => {
             var card = document.createElement("div");
             card.className = "card";
             card.setAttribute("data-status", ship.status);
@@ -621,11 +639,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 cardBody.appendChild(dateText);
     
                 var button = document.createElement("button");
-                button.className = "btn btn-link p-0";
+                button.className = "btn btn-link p-0 view-gallery-btn";
                 button.innerText = "View Gallery";
-                button.onclick = function () {
-                    openGallery(ship);
-                };
+                button.setAttribute("data-ship-index", index);
+                // onClick is set after tabs are appended x_x
                 cardBody.appendChild(button);
             }
     
@@ -697,9 +714,18 @@ document.addEventListener('DOMContentLoaded', function () {
             buildShipsGrid(ships.filter(ship => ship.type === type), type)
         }
     }
+    function addGalleryClickListener() {
+        document.body.addEventListener('click', function (event) {
+            if (event.target.classList.contains('view-gallery-btn')) {
+                var shipIndex = event.target.getAttribute('data-ship-index');
+                openGallery(ships[shipIndex]);
+            }
+        });
+    }
 
     setupSlider()
     setupTabBar()
     populateAllTab()
     populateTypeTabs()
+    addGalleryClickListener()
 });
