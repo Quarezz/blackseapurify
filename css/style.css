@@ -36,84 +36,122 @@
 }
 /*
     --------------------
+    Slider
+    --------------------
+*/
+.slider-container input[type="range"] {
+    width: 80%;
+    margin: 0 auto;
+}
+/*
+    --------------------
     Cards
     --------------------
 */
+/* Apply grid to the container */
+.ship-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust '150px' as needed */
+    gap: 10px; /* Adjust gap between items */
+    padding: 10px; /* Padding inside the container */
+}
 
-/* Card Styles */
+/* Card styles */
 .card {
     border: none;
     border-radius: 0.25rem;
-    overflow: hidden; /* Ensures the overlay fits within the card */
-    background-color: #f8f9fa; /* Light grey background */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for hover effect */
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa; /* Light grey background, change as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.card:hover {
+    transform: scale(1.03);
+}
+
 /* Image Wrapper Styles */
 .image-wrapper {
     position: relative;
+    width: 100%; /* Full width */
+
+    background-image: linear-gradient(90deg, rgba(216, 216, 216, 0.5) 1px, transparent 1px),
+                      linear-gradient(rgba(216, 216, 216, 0.5) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
 }
+
 /* Ship Image Styles */
 .card-img-top {
-    width: 100%;
-    height: auto; /* Adjust height to maintain the aspect ratio */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+    width: 100%; /* Full width of the card */
+    height: 210px; /* Adjust height to maintain the aspect ratio */
+    object-fit: contain; /* Ensures the entire image is visible */
 }
+
 /* Overlay for Destroyed Ships */
 .overlay {
+    display: none; /* Initially hidden, only shown for 'down' status */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to top, rgba(255, 0, 0, 0), rgba(255, 0, 0, 0.5)); /* Fire-like gradient */
-    opacity: 0; /* Hide initially; shown on 'down' status */
-    transition: opacity 0.3s ease-in-out; /* Smooth transition for hover effect */
+    z-index: 1;
 }
+
+.card[data-status="down"] .overlay {
+    display: block;
+    background: linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(255, 0, 0, 0)); /* Fire-like gradient */
+}
+
 /* Card Body Styles */
 .card-body {
-    padding: 0.5rem;
+    padding: 1rem;
     text-align: center;
+    flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between; /* Aligns title/date at the top, button at the bottom */
+    align-items: center; /* Centers the button horizontally */
 }
+
 /* Ship Name Styles */
 .card-title {
-    font-size: 1rem; /* Adjust font size as needed */
-    color: #333; /* Dark text for readability */
-    margin-bottom: 0.25rem; /* Spacing between title and date */
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.25rem;
 }
+
 /* Date Text Styles */
 .card-text {
-    font-size: 0.9rem; /* Adjust font size as needed */
-    color: #dc3545; /* Bootstrap's danger color for the date */
-    margin-bottom: 0.5rem; /* Spacing between date and button */
+    font-size: 0.9rem;
+    color: #dc3545;
+    margin-bottom: 0.5rem;
 }
+
 /* Button Styles to Look Like Text */
 .btn-link {
-    font-size: 0.9rem; /* Adjust font size as needed */
-    color: #007bff; /* Bootstrap's link color */
-    padding: 0; /* Remove padding */
-    border: none; /* Remove border */
-    background: none; /* Remove background */
+    font-size: 0.9rem;
+    color: #007bff;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    align-self: flex-end;
+    text-decoration: underline;
 }
+
 .btn-link:hover,
 .btn-link:focus {
-    text-decoration: underline; /* Underline to indicate it's clickable */
-    color: #0056b3; /* Darker shade on hover */
-    background: none; /* Ensure no background on hover/focus */
-    outline: none; /* Remove focus outline */
+    color: #0056b3;
+    text-decoration: none; /* Optional: toggle underline on hover */
+    outline: none;
 }
 
-/* Hover Effects for Card */
-.card:hover {
-    transform: scale(1.03); /* Slightly scale up cards on hover */
+/* Responsive adjustments as needed for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Even smaller cards on mobile */
+    }
 }
-
-.card:hover .card-img-top {
-    opacity: 0.9; /* Slightly fade image on hover */
-}
-
-.card:hover .overlay {
-    opacity: 1; /* Show the overlay on hover if status is 'down' */
-}
-
-
-

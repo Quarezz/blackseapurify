@@ -8,29 +8,17 @@
     <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
+    <div class="slider-container text-center my-4">
+        <label for="cardWidthSlider">Adjust Card Size:</label>
+        <input type="range" id="cardWidthSlider" min="100" max="300" value="180" step="10" class="mx-2">
+    </div>
+    
     <ul class="nav nav-tabs" id="shipTabs" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab" aria-controls="all" aria-selected="true">All</a>
-        </li>
-        <!-- Repeat for other categories -->
-        <li class="nav-item">
-          <a class="nav-link" id="category1-tab" data-toggle="tab" href="#category1" role="tab" aria-controls="category1" aria-selected="false">Category 1</a>
-        </li>
-        <!-- ... -->
-      </ul>
-      
+        <!-- Tabs will be dynamically injected here -->
+    </ul>
+    
     <div class="tab-content" id="shipTabsContent">
-    <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
-        <!-- All ships will be displayed here -->
-        <div class="container" id="container">
-            <!-- Grid will go here -->
-        </div>
-    </div>
-    <!-- Repeat for other categories -->
-    <div class="tab-pane fade" id="category1" role="tabpanel" aria-labelledby="category1-tab">
-        <!-- Category 1 ships will be displayed here -->
-    </div>
-    <!-- ... -->
+        <!-- Tab panes will be dynamically injected here -->
     </div>
 
     <!-- Gallery Modal -->
