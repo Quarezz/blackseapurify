@@ -291,7 +291,13 @@ let ships = [
         {
             "name": "Патрульниий корабель проекту 22160 \"Сєргєй Котов\"",
             "image": "assets/ship_test.png",
-            "status": "pendind",
+            "status": "down",
+            "date": "2024.03.05",
+            "media": [
+                "assets/destroyed_proof/kotov_1.mp4",
+                "assets/destroyed_proof/kotov_2.mp4",
+                "assets/destroyed_proof/kotov_3.mp4"
+            ],
             "type_name": "Патрульні",
             "type": "patrol"
         },
@@ -732,7 +738,8 @@ document.addEventListener('DOMContentLoaded', function () {
     ships.forEach((ship, index) => {
         ship.identifier = index
     });
-    setupSlider()
+    // TODO: update slider code
+    // setupSlider()
     setupTabBar()
     populateAllTab()
     populateTypeTabs()
